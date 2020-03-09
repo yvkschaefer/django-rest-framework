@@ -896,8 +896,8 @@ It's simple to create a read-only serializer for converting `HighScore` instance
 We can now use this class to serialize single `HighScore` instances:
 
     @api_view(['GET'])
-    def high_score(request, pk):
-        instance = HighScore.objects.get(pk=pk)
+    def high_score(request, primary_key):
+        instance = HighScore.objects.get(primary_key=primary_key)
         serializer = HighScoreSerializer(instance)
 	    return Response(serializer.data)
 
